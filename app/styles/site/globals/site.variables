@@ -1,11 +1,10 @@
 /*******************************
      User Global Variables
 *******************************/
+@linkColor        : #F04646;
+@secondaryColor   : @grey;
+@blue             : #67a1ac;
+@red              : #F04646;
+@grey             : #4b4b4b;
 
-@linkColor    : #F04646;
-@secondaryColor    : @grey;
-@blue         : #67a1ac;
-@red          : #F04646;
-@grey       : #4b4b4b;
-
-@fontName          : 'Source Sans Pro';
+@fontName         : 'Source Sans Pro';
