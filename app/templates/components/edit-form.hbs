@@ -1,0 +1,71 @@
+<form>
+{{project.title}}
+{{#if showEditForm}}
+  <div class="">
+    {{input value=project.title id=title}}
+  </div>
+{{/if}}
+
+{{project.url}}
+{{#if showEditForm}}
+  <div class="">
+    <label for="url">URL</label>
+    {{input value=project.url id=url}}
+  </div>
+{{/if}}
+
+{{#if showEditForm}}
+  <div class="">
+    <label for="summary">Summary</label>
+    {{textarea value=project.summary id=summary}}
+  </div>
+{{/if}}
+
+{{project.article}}
+{{#if showEditForm}}
+  <div class="">
+    <label for="article">Full Description</label>
+    {{textarea value=project.article id=article}}
+  </div>
+{{/if}}
+
+{{project.github}}
+{{#if showEditForm}}
+  <div class="">
+    <label for="github">Github URL</label>
+    {{input value=project.github id=github}}
+  </div>
+{{/if}}
+
+<img src={{project.thumb}}>
+{{#if showEditForm}}
+  <div class="">
+    <label for="thumb">Thumbnail Image</label>
+    {{input value=project.thumb id=thumb}}
+  </div>
+{{/if}}
+
+<img src={{project.img}}>
+{{#if showEditForm}}
+  <div class="">
+    <label for="img">Full Image</label>
+    {{input value=project.img id=img}}
+  </div>
+{{/if}}
+
+{{#if showEditForm}}
+  <div class="">
+    <label for="sort">Sort Order</label>
+    {{input value=project.sort id=sort}}
+  </div>
+
+  <button {{action 'edit' project}}>Submit Changes</button> <button {{action 'delete' project}}>Delete</button> <button {{action 'hide'}}>Hide</button>
+{{/if}}
+</form>
+
+{{#if session.isAuthenticated}}
+  {{#if showEditForm}}
+  {{else}}
+    <a {{action 'showEdit'}}>edit</a>
+  {{/if}}
+{{/if}}
