@@ -3,9 +3,9 @@
 *******************************/
 @fontFamily: 'Source Sans Pro';
 
-@hugeFontSize   : 3em;
-@largeFontSize  : 2.5em;
-@mediumFontSize : 2em;
+@hugeFontSize   : 3rem;
+@largeFontSize  : 2.5rem;
+@mediumFontSize : 2rem;
 
 h1.ginormous {
   font-size:4em !important;
