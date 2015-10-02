@@ -1,3 +1,19 @@
-{{#each sortedProjects as |project|}}
-  {{#link-to 'project' project}}{{project.title}}{{/link-to}}
-{{/each}}
+<div class="ui container portfolio">
+  <div class="ui three cards stackable">
+    {{#each sortedProjects as |project|}}
+      <div class="card ui portfolio-flip">
+        <div class="image">
+          {{#link-to 'project' project}}<img class="ui fluid image" src={{project.thumb}} alt="{{project.title}} Thumb" />{{/link-to}}
+        </div>
+        <div class="content">
+          {{#link-to 'project' project}}<h1 class="ui header">{{project.title}}</h1>{{/link-to}}
+          <div class="meta"><a href="{{project.url}}" target="_blank"><i class="icon external"></i> {{project.url}}</a></div>
+          <div class="description">
+            {{project.summary}}
+          </div>
+        </div>
+        {{{github-display project.github}}}
+      </div>
+    {{/each}}
+  </div>
+</div>
