@@ -4,7 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'kylecodes-ember',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+                             'style-src': "'self' https://fonts.googleapis.com",
+                             'font-src': "'self' https://fonts.gstatic.com data:"
+                           },
     firebase: 'https://kylecodes.firebaseio.com/',
     torii: {
       sessionServiceName: 'session'
