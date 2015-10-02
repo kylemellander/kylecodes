@@ -14,4 +14,13 @@
   </ul>
 </div>
 
-{{outlet}}
+<div class="km-main-container">
+  {{outlet}}
+</div>
+
+{{#if session.isAuthenticated}}
+  Logged in as {{session.currentUser.email}}
+  <button {{action "signOut"}}>Sign out</button>
+{{else}}
+  {{#link-to 'login'}}<button>Sign in</button>{{/link-to}}
+{{/if}}
