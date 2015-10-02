@@ -1,3 +1,45 @@
 /*******************************
      User Global Variables
 *******************************/
+
+
+body {
+  background: image-url("white_wall.png") no-repeat center center fixed;
+  background-size: cover;
+  margin-left: 40px;
+  margin-right:40px;
+}
+@media(max-width:615px) {
+  body {
+    margin:1%;
+  }
+}
+.km-menu-logo {
+  min-width:80px;
+}
+.main-container {
+  margin-bottom:40px;
+}
+.container.main {
+  margin-bottom:80px;
+}
+.ui.menu .item.km-item {
+  font-family: 'Poppins', sans-serif;
+  font-size:1.4em;
+}
+.menu-subtext{
+	font-size:.65em;
+  color: #777;
+}
+.big-logo {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.hidden { display:none;}
+@linkColor    : #F04646;
+@secondaryColor    : @grey;
+@blue         : #67a1ac;
+@red          : #F04646;
+@grey       : #4b4b4b;
+
+@fontName          : 'Source Sans Pro';
