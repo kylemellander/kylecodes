@@ -1,1 +1,5 @@
-{{outlet}}
+{{#if session.isAuthenticated}}
+  {{add-project-form session=session addProject="addProject"}}
+{{/if}}
+
+{{display-projects projects=model}}

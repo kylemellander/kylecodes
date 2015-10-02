@@ -1,0 +1,49 @@
+{{#if addProject}}
+  <h3>Add a project</h3>
+
+  <form>
+    <div class="">
+      <label for="title">Name</label>
+      {{input value=title id=title}}
+    </div>
+
+    <div class="">
+      <label for="url">URL</label>
+      {{input value=url id=url}}
+    </div>
+
+    <div class="">
+      <label for="summary">Summary</label>
+      {{textarea value=summary id=summary}}
+    </div>
+
+    <div class="">
+      <label for="article">Full Description</label>
+      {{textarea value=article id=article}}
+    </div>
+
+    <div class="">
+      <label for="github">Github URL</label>
+      {{input value=github id=github}}
+    </div>
+
+    <div class="">
+      <label for="thumb">Thumbnail Image</label>
+      {{input value=thumb id=thumb}}
+    </div>
+
+    <div class="">
+      <label for="img">Full Image</label>
+      {{input value=img id=img}}
+    </div>
+
+    <div class="">
+      <label for="sort">Sort Number (Higher is lower):</label>
+      {{input value=sort id=sort}}
+    </div>
+
+    <button {{action 'addProject'}}>Submit</button> <button {{action 'hide'}}>Hide</button>
+  </form>
+{{else}}
+  <button {{action 'showAddProject'}}>Add a project</button>
+{{/if}}
