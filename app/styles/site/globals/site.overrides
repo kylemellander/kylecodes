@@ -59,3 +59,14 @@ body {
   margin-bottom: 100px;
 }
 .hidden { display:none;}
+.modal .ginormous {
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15) !important;
+}
+.km-article {
+  font-size: 1.2em;
+  margin-top: 18px !important;
+  margin-bottom:18px;
+}
+.ui.right.floated.button {
+  z-index:9;
+}

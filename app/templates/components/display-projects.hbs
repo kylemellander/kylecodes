@@ -3,10 +3,14 @@
     {{#each sortedProjects as |project|}}
       <div class="card ui portfolio-flip">
         <div class="image">
-          {{#link-to 'project' project}}<img class="ui fluid image" src={{project.thumb}} alt="{{project.title}} Thumb" />{{/link-to}}
+          <a {{action 'showProject' project}}><img class="ui fluid image" src={{project.thumb}} alt="{{project.title}} Thumb" /></a>
+        </div>
+        <div class="ui modal {{project.id}}">
+          <i class="close icon"></i>
+            {{edit-form project=project edit="edit" delete="delete" session=session}}
         </div>
         <div class="content">
-          {{#link-to 'project' project}}<h1 class="ui header">{{project.title}}</h1>{{/link-to}}
+          <a {{action 'showProject' project}}><h1 class="ui header">{{project.title}}</h1></a>
           <div class="meta"><a href="{{project.url}}" target="_blank"><i class="icon external"></i> {{project.url}}</a></div>
           <div class="description">
             {{project.summary}}

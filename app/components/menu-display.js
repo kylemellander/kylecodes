@@ -3,9 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     dropdown() {
-      $('.dropdown').dropdown({
-        transition: 'drop'
-      });
+      this.$('.dropdown').dropdown({ transition: 'drop'});
     }
   }
 });
