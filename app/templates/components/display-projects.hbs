@@ -10,6 +10,9 @@
             {{edit-form project=project edit="edit" delete="delete" session=session}}
         </div>
         <div class="content">
+          {{#if session.isAuthenticated}}
+            {{#link-to 'project' project}}edit{{/link-to}}
+          {{/if}}
           <a {{action 'showProject' project}}><h1 class="ui header">{{project.title}}</h1></a>
           <div class="meta"><a href="{{project.url}}" target="_blank"><i class="icon external"></i> {{project.url}}</a></div>
           <div class="description">
