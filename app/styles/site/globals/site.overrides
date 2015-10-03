@@ -16,6 +16,20 @@ body {
     padding:1%;
   }
 }
+.km-toggle-menu {
+  display: none;
+}
+@media(max-width:767px) {
+  .km-right {
+    position: fixed;
+    right: 2%;
+    top: 30px;
+    z-index:10;
+  }
+  .ui.menu .item.km-item {
+    font-size:2.2em !important;
+  }
+}
 .tabular.menu .item:hover, a:hover {
   cursor: pointer;
 }
@@ -35,6 +49,10 @@ body {
 .menu-subtext{
 	font-size:.65em;
   color: #777;
+}
+.km-footer {
+  clear:both;
+  margin-top:40px;
 }
 .big-logo {
   margin-top: 100px;

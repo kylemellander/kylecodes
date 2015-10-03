@@ -1,0 +1,55 @@
+<div class="ui page grid">
+  <div class="computer tablet only row">
+    <div class="ui secondary large menu">
+      <div class="ui container">
+        <div class="item km-menu-logo">{{#link-to 'index'}}<img class="ui tiny image fluid" src="/img/logo_sm.png" />{{/link-to}}</div>
+        <div class="item km-item">
+          {{#link-to 'index'}}Home<br>
+            <span class="menu-subtext">Start Again</span>
+          {{/link-to}}
+        </div>
+        <div class="item km-item">
+          {{#link-to 'projects'}}Portfolio<br>
+            <span class="menu-subtext">See My Work</span>
+          {{/link-to}}
+        </div>
+        <div class="item km-item">
+          {{#link-to 'about'}}About<br>
+            <span class="menu-subtext">Meet Me</span>
+          {{/link-to}}
+        </div>
+        <div class="right menu">
+          <div class="item">
+            <a href="https://github.com/kylemellander" target="_blank"><i class="github big square icon"></i></a>
+            <a href="https://www.linkedin.com/in/kylemellander" target="_blank"><i class="linkedin big square icon"></i></a>
+            <a href="https://www.facebook.com/mellander" target="_blank"><i class="facebook big square icon"></i></a>
+            <a href="https://www.twitter.com/mellander" target="_blank"><i class="twitter big square icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile only row">
+    <div class="ui secondary large menu">
+      <div class="item km-menu-logo">{{#link-to 'index'}}<img class="ui tiny image fluid" src="/img/logo_sm.png" />{{/link-to}}</div>
+      <div class="item">
+        <a href="https://github.com/kylemellander" target="_blank"><i class="github big square icon"></i></a>
+        <a href="https://www.linkedin.com/in/kylemellander" target="_blank"><i class="linkedin big square icon"></i></a>
+        <a href="https://www.facebook.com/mellander" target="_blank"><i class="facebook big square icon"></i></a>
+        <a href="https://www.twitter.com/mellander" target="_blank"><i class="twitter big square icon"></i></a>
+      </div>
+      <div class="right menu km-right">
+        <div class="ui dropdown icon red inverted button km-item" {{action 'dropdown'}} tabindex="0">
+          <i class="sidebar icon km-item"></i>
+          <div class="menu">
+            <div class="km-menu" tabindex="-1">
+              <div class="item km-item">{{#link-to 'index'}}Home <span class="menu-subtext">Start Again</span>{{/link-to}}</div>
+              <div class="item km-item">{{#link-to 'projects'}}Portfolio <span class="menu-subtext">See My Work</span>{{/link-to}}</div>
+              <div class="item km-item">{{#link-to 'about'}}About <span class="menu-subtext">Meet Me</span>{{/link-to}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
