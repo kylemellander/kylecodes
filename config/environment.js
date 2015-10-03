@@ -6,7 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
                              'style-src': "'self' https://fonts.googleapis.com 'unsafe-inline'",
-                             'font-src': "'self' https://fonts.gstatic.com data:"
+                             'font-src': "'self' https://fonts.gstatic.com data:",
+                             'img-src': "'self' http://*.photobucket.com"
                            },
     firebase: 'https://kylecodes.firebaseio.com/',
     torii: {

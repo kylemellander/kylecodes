@@ -6,9 +6,9 @@ export default Ember.Component.extend({
   show: false,
   actions: {
     showProject(project) {
-      this.set('show', true);
       var modalId = ".ui.modal." + project.get('id');
-      this.$(modalId).modal('show');
+      $(modalId).modal('toggle');
+      this.transitionTo('projects');
     },
   },
   // didInsertElement: function() {
