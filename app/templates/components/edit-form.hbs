@@ -1,65 +1,71 @@
-{{#if showEditForm}}
-  <form class="ui form">
-
-    <div class="field">
-      <label for="title">Title</label>
-      {{input value=project.title id=title}}
-    </div>
-
-    <div class="field">
-      <label for="url">URL</label>
-      {{input value=project.url id=url}}
-    </div>
-
-    <div class="field">
-      <label for="summary">Summary</label>
-      {{textarea value=project.summary id=summary}}
-    </div>
-
-    <div class="field">
-      <label for="article">Full Description</label>
-      {{textarea value=project.article id=article}}
-    </div>
-
-    <div class="field">
-      <label for="github">Github URL</label>
-      {{input value=project.github id=github}}
-    </div>
-
-    <div class="field">
-      <label for="thumb">Thumbnail Image</label>
-      {{input value=project.thumb id=thumb}}
-    </div>
-
-    <div class="field">
-      <label for="img">Full Image</label>
-      {{input value=project.img id=img}}
-    </div>
-
-    <div class="field">
-      <label for="sort">Sort Order</label>
-      {{input value=project.sort id=sort}}
-    </div>
-
-    <button {{action 'edit' project}} class="ui primary button">Submit Changes</button> <button {{action 'delete' project}} class="ui red button">Delete</button> <button {{action 'hide'}} class="ui button">Hide</button>
-
-  </form>
-{{ else }}
-  <h1 class="ui header">
-    {{project.title}} <a href="{{project.url}}" target="_blank" class="small"><i class="icon external"></i></a>
-    {{#if project.github}}
-      <div class="sub header"><a href="{{project.github}}">View on Github</a></div>
-    {{/if}}
-  </h1>
-  {{#link-to 'projects'}}back{{/link-to}}
-
-  <div class="ui red segment km-full-content">
-    {{project.article}}
-  </div>
-
-  <img src={{project.img}} class="ui fluid image">
-
-  {{#if session.isAuthenticated}}
-    <p><a {{action 'showEdit'}}>edit</a></p>
+{{#if session.isAuthenticated}}
+  {{#if showEditForm}}
+  {{else}}
+    <button {{action 'showEdit'}} class="ui right floated red button">edit</button>
   {{/if}}
 {{/if}}
+<h1 class="ui red ginormous header">{{project.title}}</h1>
+<form class="ui form">
+  {{#if showEditForm}}
+    <div class="field">
+      {{input value=project.title id=title}}
+    </div>
+  {{/if}}
+  <div class="meta">
+    <a href="{{project.url}}" target="_blank"><i class="icon external"></i> {{project.url}}</a>
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="url">URL</label>
+        {{input value=project.url id=url}}
+      </div>
+    {{/if}}
+  </div>
+  <div class="content">
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="summary">Summary</label>
+        {{textarea value=project.summary id=summary}}
+      </div>
+    {{/if}}
+
+    <p class="km-article">{{project.article}}</p>
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="article">Full Description</label>
+        {{textarea value=project.article id=article}}
+      </div>
+    {{/if}}
+
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="thumb">Thumbnail Image</label>
+        {{input value=project.thumb id=thumb}}
+      </div>
+    {{/if}}
+
+    <img src={{project.img}} class="ui fluid image">
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="img">Full Image</label>
+        {{input value=project.img id=img}}
+      </div>
+    {{/if}}
+
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="sort">Sort Order</label>
+        {{input value=project.sort id=sort}}
+      </div>
+    {{/if}}
+
+    {{{github-display project.github}}}
+    {{#if showEditForm}}
+      <div class="field">
+        <label for="github">Github URL</label>
+        {{input value=project.github id=github}}
+      </div>
+
+      <button {{action 'edit' project}}>Submit Changes</button> <button {{action 'delete' project}}>Delete</button> <button {{action 'hide'}}>Hide</button>
+    {{/if}}
+  </div>
+</form>
