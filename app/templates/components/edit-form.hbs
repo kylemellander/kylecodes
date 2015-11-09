@@ -1,71 +1,65 @@
-<form>
-{{project.title}}
 {{#if showEditForm}}
-  <div class="">
-    {{input value=project.title id=title}}
-  </div>
-{{/if}}
+  <form class="ui form">
 
-{{project.url}}
-{{#if showEditForm}}
-  <div class="">
-    <label for="url">URL</label>
-    {{input value=project.url id=url}}
-  </div>
-{{/if}}
+    <div class="field">
+      <label for="title">Title</label>
+      {{input value=project.title id=title}}
+    </div>
 
-{{#if showEditForm}}
-  <div class="">
-    <label for="summary">Summary</label>
-    {{textarea value=project.summary id=summary}}
-  </div>
-{{/if}}
+    <div class="field">
+      <label for="url">URL</label>
+      {{input value=project.url id=url}}
+    </div>
 
-{{project.article}}
-{{#if showEditForm}}
-  <div class="">
-    <label for="article">Full Description</label>
-    {{textarea value=project.article id=article}}
-  </div>
-{{/if}}
+    <div class="field">
+      <label for="summary">Summary</label>
+      {{textarea value=project.summary id=summary}}
+    </div>
 
-{{project.github}}
-{{#if showEditForm}}
-  <div class="">
-    <label for="github">Github URL</label>
-    {{input value=project.github id=github}}
-  </div>
-{{/if}}
+    <div class="field">
+      <label for="article">Full Description</label>
+      {{textarea value=project.article id=article}}
+    </div>
 
-<img src={{project.thumb}}>
-{{#if showEditForm}}
-  <div class="">
-    <label for="thumb">Thumbnail Image</label>
-    {{input value=project.thumb id=thumb}}
-  </div>
-{{/if}}
+    <div class="field">
+      <label for="github">Github URL</label>
+      {{input value=project.github id=github}}
+    </div>
 
-<img src={{project.img}}>
-{{#if showEditForm}}
-  <div class="">
-    <label for="img">Full Image</label>
-    {{input value=project.img id=img}}
-  </div>
-{{/if}}
+    <div class="field">
+      <label for="thumb">Thumbnail Image</label>
+      {{input value=project.thumb id=thumb}}
+    </div>
 
-{{#if showEditForm}}
-  <div class="">
-    <label for="sort">Sort Order</label>
-    {{input value=project.sort id=sort}}
+    <div class="field">
+      <label for="img">Full Image</label>
+      {{input value=project.img id=img}}
+    </div>
+
+    <div class="field">
+      <label for="sort">Sort Order</label>
+      {{input value=project.sort id=sort}}
+    </div>
+
+    <button {{action 'edit' project}} class="ui primary button">Submit Changes</button> <button {{action 'delete' project}} class="ui red button">Delete</button> <button {{action 'hide'}} class="ui button">Hide</button>
+
+  </form>
+{{ else }}
+  <h1 class="ui header">
+    {{project.title}} <a href="{{project.url}}" target="_blank" class="small"><i class="icon external"></i></a>
+    {{#if project.github}}
+      <div class="sub header"><a href="{{project.github}}">View on Github</a></div>
+    {{/if}}
+  </h1>
+  {{#link-to 'projects'}}back{{/link-to}}
+
+  <div class="ui red segment km-full-content">
+    {{project.article}}
   </div>
 
-  <button {{action 'edit' project}}>Submit Changes</button> <button {{action 'delete' project}}>Delete</button> <button {{action 'hide'}}>Hide</button>
-{{/if}}
-</form>
+  <img src={{project.img}} class="ui fluid image">
 
-{{#if session.isAuthenticated}}
-  {{#if showEditForm}}
-  {{else}}
-    <a {{action 'showEdit'}}>edit</a>
+  {{#if session.isAuthenticated}}
+    <p><a {{action 'showEdit'}}>edit</a></p>
   {{/if}}
 {{/if}}
