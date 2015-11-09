@@ -17,8 +17,8 @@ export default Ember.Route.extend({
     delete(project) {
       project.destroyRecord();
       this.transitionTo('projects');
-      $(".km-main-container").prepend('<div class="ui message">Your question has been deleted</div>');
-      $(".ui.message").delay(3000).fadeOut(1000, function() {$(this).remove();});
+      Ember.$(".km-main-container").prepend('<div class="ui message">Your question has been deleted</div>');
+      Ember.$(".ui.message").delay(3000).fadeOut(1000, function() {Ember.$(this).remove();});
     }
   }
 });

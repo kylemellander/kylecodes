@@ -1,1 +1,11 @@
 {{index-view}}
+
+
+<div class="ui container km-footer">
+  {{#if session.isAuthenticated}}
+    Logged in as {{session.currentUser.email}}
+    <button {{action "signOut"}}>Sign out</button>
+  {{else}}
+    {{#link-to 'login'}}<button>admin</button>{{/link-to}}
+  {{/if}}
+</div>

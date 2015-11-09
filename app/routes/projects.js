@@ -8,8 +8,8 @@ export default Ember.Route.extend({
     addProject(params) {
       var newProject = this.store.createRecord('project', params);
       newProject.save();
-      $(".km-main-container").prepend('<div class="ui message">'+params.title+' has been successfully added.</div>');
-      $(".ui.message").delay(3000).fadeOut(1000, function() {$(this).remove();});
+      Ember.$(".km-main-container").prepend('<div class="ui message">'+params.title+' has been successfully added.</div>');
+      Ember.$(".ui.message").delay(3000).fadeOut(1000, function() {Ember.$(this).remove();});
       this.transitionTo("projects");
     }
   }
